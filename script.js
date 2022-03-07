@@ -56,16 +56,14 @@ createEleCard();
 
 function createEleCard() {
 
-    //sistemo layout div.team-container
-    eleTeamContainer.style.justifyContent = "flex-start"; 
-
     //ciclo per scorrere gli oggetti dell'arrey
     for (const key in arrUsersData) {
 
         //creo un elemento per ogni oggetto dell'arrey e inserisco i dati membri
         let eleCard = document.createElement("div")
+        eleCard.classList.add("team-card")
         eleCard.innerHTML = `          
-        <div class="team-card">
+        
             <div class="card-image">
                 <img
                     src= ${arrUsersData[key]["img"]}
@@ -76,11 +74,9 @@ function createEleCard() {
                 <h3>${arrUsersData[key]["name"]}</h3>
                 <p>${arrUsersData[key]["role"]}</p>
             </div>
-        </div>`
+            `
         
         eleTeamContainer.append(eleCard);
-
-        imagesDimension();
     }  
 }
 
@@ -132,5 +128,13 @@ function createNewCard() {
     eleTeamContainer.append(eleCard);
 
     imagesDimension(); 
+
+    let UserData = {
+        name: eleInputImage.value,
+        role: eleInputRole.value,
+        img:  eleInputImage.value  
+    }
+
+    arrUsersData.push(UserData)
 }
 
