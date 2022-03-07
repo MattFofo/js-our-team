@@ -48,18 +48,19 @@ const arrUsersData = [
 console.log('arrUsersData', arrUsersData)
 
 
-//sistemo layout div.team-container
-const eleTeamContainer = document.querySelector(".team-container");
-eleTeamContainer.style.justifyContent = "flex-start"; 
+createEleCard();
 
-//ciclo per scorrere gli oggetti dell'arrey
-for (const key in arrUsersData) {
-    console.log(key, arrUsersData[key])
 
-    //creo un elemento per ogni oggetto dell'arrey e inserisco i dati membri
-    createEleCard();
+function createEleCard() {
+    //sistemo layout div.team-container
+    const eleTeamContainer = document.querySelector(".team-container");
+    eleTeamContainer.style.justifyContent = "flex-start"; 
 
-    function createEleCard() {
+    //ciclo per scorrere gli oggetti dell'arrey
+    for (const key in arrUsersData) {
+        console.log(key, arrUsersData[key])
+
+        //creo un elemento per ogni oggetto dell'arrey e inserisco i dati membri
         let ele = document.createElement('div')
         ele.innerHTML = `          
         <div class="team-card">
@@ -76,15 +77,14 @@ for (const key in arrUsersData) {
         </div>`
         
         eleTeamContainer.append(ele);
+
         const eleImges = document.getElementsByTagName("img");
-        console.log(eleImges[0])
-        
+
         //ciclo per ridimensionare immagini
         for (let i = 0; i < eleImges.length; i++) {
             
             eleImges[i].style.width = "370px";
             
         }
-    }
-
+    }  
 }
