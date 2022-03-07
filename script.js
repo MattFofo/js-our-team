@@ -3,6 +3,8 @@ Viene fornito un layout di base. Come prima cosa nel file js definitevi un array
 Prendendo come riferimento la card di esempio presente nell'html, stampiamo dinamicamente una card per ogni membro del team.
 */
 
+
+
 const eleTeamContainer = document.querySelector(".team-container");
 
 // arrey di oggetti che rappresentano i membri del team
@@ -48,12 +50,15 @@ const arrUsersData = [
 console.log('arrUsersData', arrUsersData)
 
 
+
 createEleCard();
 
 
+
+
 function createEleCard() {
+
     //sistemo layout div.team-container
-    
     eleTeamContainer.style.justifyContent = "flex-start"; 
 
     //ciclo per scorrere gli oggetti dell'arrey
@@ -78,16 +83,23 @@ function createEleCard() {
         
         eleTeamContainer.append(eleCard);
 
-        const eleImges = document.getElementsByTagName("img");
-
-        //ciclo per ridimensionare immagini
-        for (let i = 0; i < eleImges.length; i++) {
-            
-            eleImges[i].style.width = "370px";
-            
-        }
+        imagesDimension();
     }  
 }
+
+//funzione per dimensionare tutte le immagini delle card
+function imagesDimension() {
+    const eleImges = document.getElementsByTagName("img");
+
+    //ciclo per ridimensionare immagini
+    for (let i = 0; i < eleImges.length; i++) {
+        
+        eleImges[i].style.width = "370px";
+        eleImges[i].style.height = "400px";       
+    }    
+}
+
+
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -120,5 +132,8 @@ function createNewCard() {
         </div>
     </div>`
     
-    eleTeamContainer.append(eleCard);  
+    eleTeamContainer.append(eleCard);
+
+    imagesDimension(); 
 }
+
