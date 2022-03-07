@@ -57,7 +57,7 @@ createEleCard();
 function createEleCard() {
 
     //ciclo per scorrere gli oggetti dell'arrey
-    for (const key in arrUsersData) {
+    for (const userID in arrUsersData) {
 
         //creo un elemento per ogni oggetto dell'arrey e inserisco i dati membri
         let eleCard = document.createElement("div")
@@ -66,13 +66,13 @@ function createEleCard() {
         
             <div class="card-image">
                 <img
-                    src= ${arrUsersData[key]["img"]}
-                    alt= ${arrUsersData[key]["name"]}
+                    src= ${arrUsersData[userID]["img"]}
+                    alt= ${arrUsersData[userID]["name"]}
                 />
             </div>
             <div class="card-text">
-                <h3>${arrUsersData[key]["name"]}</h3>
-                <p>${arrUsersData[key]["role"]}</p>
+                <h3>${arrUsersData[userID]["name"]}</h3>
+                <p>${arrUsersData[userID]["role"]}</p>
             </div>
             `
         
