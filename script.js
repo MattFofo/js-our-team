@@ -80,17 +80,6 @@ function createEleCard() {
     }  
 }
 
-//funzione per dimensionare tutte le immagini delle card
-function imagesDimension() {
-    const eleImges = document.getElementsByTagName("img");
-
-    //ciclo per ridimensionare immagini
-    for (let i = 0; i < eleImges.length; i++) {
-        
-        eleImges[i].style.width = "370px";
-        eleImges[i].style.height = "400px";       
-    }    
-}
 
 
 
@@ -105,6 +94,20 @@ const eleInputRole = document.getElementById("role");
 const eleInputImage = document.getElementById("image");
 
 eleButtonAddMember.addEventListener('click', createNewCard);
+
+
+//funzione per dimensionare tutte le immagini delle card
+function imagesDimension() {
+    const eleImges = document.getElementsByTagName("img");
+
+    //ciclo per ridimensionare immagini
+    for (let i = 0; i < eleImges.length; i++) {
+        
+        eleImges[i].style.width = "370px";
+        eleImges[i].style.height = "400px";       
+    }    
+}
+
 
 
 function createNewCard() {
