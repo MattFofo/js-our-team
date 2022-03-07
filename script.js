@@ -3,7 +3,7 @@ Viene fornito un layout di base. Come prima cosa nel file js definitevi un array
 Prendendo come riferimento la card di esempio presente nell'html, stampiamo dinamicamente una card per ogni membro del team.
 */
 
-
+const eleTeamContainer = document.querySelector(".team-container");
 
 // arrey di oggetti che rappresentano i membri del team
 const arrUsersData = [
@@ -53,7 +53,7 @@ createEleCard();
 
 function createEleCard() {
     //sistemo layout div.team-container
-    const eleTeamContainer = document.querySelector(".team-container");
+    
     eleTeamContainer.style.justifyContent = "flex-start"; 
 
     //ciclo per scorrere gli oggetti dell'arrey
@@ -61,8 +61,8 @@ function createEleCard() {
         console.log(key, arrUsersData[key])
 
         //creo un elemento per ogni oggetto dell'arrey e inserisco i dati membri
-        let ele = document.createElement('div')
-        ele.innerHTML = `          
+        let eleCard = document.createElement("div")
+        eleCard.innerHTML = `          
         <div class="team-card">
             <div class="card-image">
                 <img
@@ -76,7 +76,7 @@ function createEleCard() {
             </div>
         </div>`
         
-        eleTeamContainer.append(ele);
+        eleTeamContainer.append(eleCard);
 
         const eleImges = document.getElementsByTagName("img");
 
@@ -87,4 +87,38 @@ function createEleCard() {
             
         }
     }  
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+
+// BONUS
+
+const eleButtonAddMember = document.getElementById("addMemberButton");
+const eleInputName = document.getElementById("name");
+const eleInputRole = document.getElementById("role");
+const eleInputImage = document.getElementById("image");
+
+eleButtonAddMember.addEventListener('click', createNewCard);
+
+
+function createNewCard() {
+
+    //creo una nuova card con i valori ricevuti dagli input
+    let eleCard = document.createElement("div")
+    eleCard.innerHTML = `          
+    <div class="team-card">
+        <div class="card-image">
+            <img
+                src= ${eleInputImage.value}
+                alt= ${eleInputName.value}
+            />
+        </div>
+        <div class="card-text">
+            <h3>${eleInputName.value}</h3>
+            <p>${eleInputRole.value}</p>
+        </div>
+    </div>`
+    
+    eleTeamContainer.append(eleCard);  
 }
