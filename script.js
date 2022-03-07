@@ -114,30 +114,34 @@ function createNewCard() {
 
     //creo una nuova card con i valori ricevuti dagli input
     let eleCard = document.createElement("div")
+    eleCard.classList.add("team-card")
+
     eleCard.innerHTML = `          
-    <div class="team-card">
-        <div class="card-image">
-            <img
-                src= ${eleInputImage.value}
-                alt= ${eleInputName.value}
-            />
-        </div>
-        <div class="card-text">
-            <h3>${eleInputName.value}</h3>
-            <p>${eleInputRole.value}</p>
-        </div>
-    </div>`
+    <div class="card-image">
+        <img
+            src= ${eleInputImage.value}
+            alt= ${eleInputName.value}
+        />
+    </div>
+    <div class="card-text">
+        <h3>${eleInputName.value}</h3>
+        <p>${eleInputRole.value}</p>
+    </div>
+    `
     
     eleTeamContainer.append(eleCard);
 
     imagesDimension(); 
 
+    //trasformo la nuova card in un oggetto e lo aggiungo all'arrUsersData
     let UserData = {
-        name: eleInputImage.value,
+        name: eleInputName.value,
         role: eleInputRole.value,
         img:  eleInputImage.value  
     }
-
+    console.log(UserData)
     arrUsersData.push(UserData)
+    console.log(arrUsersData)
+
 }
 
