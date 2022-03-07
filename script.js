@@ -22,7 +22,7 @@ const arrUsersData = [
     {
         name: 'Walter Gordon',
         role: 'Office Manager',
-        img: 'img\walter-gordon-office-manager.jpg'
+        img: 'img/walter-gordon-office-manager.jpg'
 
     },
     {
@@ -48,21 +48,23 @@ const arrUsersData = [
 console.log('arrUsersData', arrUsersData)
 
 
+//ciclo per scorrere gli oggetti dell'arrey
 for (const key in arrUsersData) {
     console.log(key, arrUsersData[key])
 
+    //creo un elemento per ogni oggetto dell'arrey e inserisco i dati membri
     let ele = document.createElement('div')
     ele.innerHTML = `          
     <div class="team-card">
         <div class="card-image">
             <img
-                src="img/wayne-barnett-founder-ceo.jpg"
-                alt="Wayne Barnett"
+                src= ${arrUsersData[key]["img"]}
+                alt= ${arrUsersData[key]["name"]}
             />
         </div>
         <div class="card-text">
-            <h3>Wayne Barnett</h3>
-            <p>Founder & CEO</p>
+            <h3>${arrUsersData[key]["name"]}</h3>
+            <p>${arrUsersData[key]["role"]}</p>
         </div>
     </div>`
     
