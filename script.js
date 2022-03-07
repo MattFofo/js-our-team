@@ -47,8 +47,6 @@ const arrUsersData = [
     },
     
 ];
-console.log('arrUsersData', arrUsersData)
-
 
 
 createEleCard();
@@ -63,7 +61,6 @@ function createEleCard() {
 
     //ciclo per scorrere gli oggetti dell'arrey
     for (const key in arrUsersData) {
-        console.log(key, arrUsersData[key])
 
         //creo un elemento per ogni oggetto dell'arrey e inserisco i dati membri
         let eleCard = document.createElement("div")
