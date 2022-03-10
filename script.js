@@ -139,9 +139,16 @@ function createNewCard() {
         role: eleInputRole.value,
         img:  eleInputImage.value  
     }
-    console.log(UserData)
+
     arrUsersData.push(UserData)
-    console.log(arrUsersData)
+
+    resetForm();
 
 }
 
+function resetForm() {
+    eleInputName.value = ''
+    eleInputRole.value = ''
+    eleInputImage.value = ''
+    
+}
